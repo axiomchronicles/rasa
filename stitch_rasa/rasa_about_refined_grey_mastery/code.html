@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#fff7f3",
+                        "surface-dim": "#d4dbdd",
+                        "surface-container-high": "#e4e9ea",
+                        "on-error": "#fff7f6",
+                        "background": "#f9f9f9",
+                        "surface-container-highest": "#dde4e5",
+                        "on-surface-variant": "#5a6061",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-container": "#525151",
+                        "secondary-dim": "#4f5459",
+                        "on-error-container": "#752121",
+                        "on-primary-fixed-variant": "#5c5b5b",
+                        "secondary": "#5b6065",
+                        "on-primary-fixed": "#403f3f",
+                        "primary-container": "#e5e2e1",
+                        "on-secondary-fixed": "#3b4045",
+                        "primary": "#5f5e5e",
+                        "surface-tint": "#5f5e5e",
+                        "error-container": "#fe8983",
+                        "on-tertiary-fixed-variant": "#6e573b",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-container": "#644e33",
+                        "inverse-on-surface": "#9c9d9d",
+                        "outline-variant": "#adb3b4",
+                        "surface-container": "#ebeeef",
+                        "tertiary-fixed-dim": "#eecfac",
+                        "on-secondary": "#f5f9ff",
+                        "on-surface": "#2d3435",
+                        "error-dim": "#4e0309",
+                        "surface-container-low": "#f2f4f4",
+                        "on-tertiary-fixed": "#503c22",
+                        "on-secondary-fixed-variant": "#575c61",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#9f403d",
+                        "inverse-surface": "#0c0f0f",
+                        "tertiary-dim": "#654f34",
+                        "outline": "#757c7d",
+                        "on-secondary-container": "#4d5257",
+                        "surface-variant": "#dde4e5",
+                        "surface-bright": "#f9f9f9",
+                        "primary-dim": "#535252",
+                        "primary-fixed-dim": "#d7d4d3",
+                        "tertiary-container": "#fdddb9",
+                        "on-background": "#2d3435",
+                        "secondary-container": "#dfe3e9",
+                        "tertiary-fixed": "#fdddb9",
+                        "inverse-primary": "#ffffff",
+                        "tertiary": "#725b3f",
+                        "on-primary": "#faf7f6",
+                        "secondary-fixed-dim": "#d0d5db",
+                        "secondary-fixed": "#dfe3e9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- Header / Navigation (Shared Component Logic - Show for About) -->
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-outline-variant/10 bg-surface/80 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-on-surface text-xl font-bold tracking-tight">RASA</h2>
+</div>
+<nav class="hidden md:flex items-center gap-12">
+<a class="text-on-surface/80 text-sm font-medium hover:text-primary transition-colors" href="#">Solutions</a>
+<a class="text-on-surface text-sm font-bold border-b border-primary" href="#">About</a>
+<a class="text-on-surface/80 text-sm font-medium hover:text-primary transition-colors" href="#">Case Studies</a>
+<a class="text-on-surface/80 text-sm font-medium hover:text-primary transition-colors" href="#">Certification</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2.5 text-sm font-bold tracking-wide rounded-sm hover:bg-primary-dim transition-all">
+                Contact Us
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[870px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0 bg-surface-container">
+<img alt="Architectural concrete geometry" class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply" data-alt="Close-up of brutalist concrete architectural detail with sharp shadows and clean geometric lines in monochrome tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLhgUzz7mV9Yn9xUGsIem96f2iSHWMa0jryBsT2Wq7ZmeAgwt80dmPfYYIEx3-HMpsdNFybtZCl5MI2b-JsiZkZmn-QaOnh_TXCDGiHIkYQV-KgOyfzt_MaG5nEcT88iaMDgl5F5U3zi13kX_aQIVD4xbNH1NwSo0_ay73YYhKD_SWtNsttpgyFEYTL0YRorKB2Jo21vZNQMVcdtCfUtUcc2w_2n7svESflHzsA-CnukhxjAleMX1fHVmx9gWqzyHwaU8n5uR_JEj1"/>
+</div>
+<div class="relative z-10 w-full px-6 md:px-20 max-w-[1440px] mx-auto">
+<div class="max-w-4xl">
+<span class="text-xs font-bold uppercase tracking-[0.2em] text-primary/60 mb-6 block">The Standard for Hospitality</span>
+<h1 class="text-5xl md:text-8xl font-black tracking-[-0.04em] text-on-surface leading-[0.95]">
+                        Engineering <br/>Operational Mastery
+                    </h1>
+</div>
+</div>
+</section>
+<!-- Narrative Section -->
+<section class="bg-surface py-32 px-6 md:px-20">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24">
+<div class="md:col-span-5">
+<h2 class="text-3xl font-bold tracking-tight text-on-surface leading-tight">
+                        The fragmentation problem isn't just an inefficiency—it's a structural failure.
+                    </h2>
+</div>
+<div class="md:col-span-7 flex flex-col gap-8">
+<p class="text-lg text-on-surface-variant leading-relaxed font-light">
+                        For decades, the hospitality industry has relied on patchwork solutions to address systemic challenges. Disparate software, manual workflows, and tribal knowledge have created a ceiling on scalability. RASA was founded to dismantle this cycle.
+                    </p>
+<p class="text-lg text-on-surface-variant leading-relaxed font-light">
+                        We don't provide consulting; we provide engineering. By applying rigorous architectural principles to the operational backbone of global brands, we convert chaos into a standardized, high-performance engine capable of limitless growth.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Vision Section (Tonal Shift) -->
+<section class="bg-surface-container-low py-32 px-6 md:px-20">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-16">
+<h2 class="text-2xl font-bold tracking-tight text-on-surface">Our Architectural Pillars</h2>
+<div class="w-12 h-0.5 bg-primary mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-12 flex flex-col gap-8 border border-outline-variant/10 group hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="architecture">architecture</span>
+<div>
+<h3 class="text-xl font-bold mb-4">Building Systems</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Structural design for complex workflows that ensures every touchpoint is calculated and repeatable.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-12 flex flex-col gap-8 border border-outline-variant/10 group hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="blur_off">blur_off</span>
+<div>
+<h3 class="text-xl font-bold mb-4">Removing Chaos</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Engineered elimination of operational noise through data-driven refinement and noise-reduction protocols.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-12 flex flex-col gap-8 border border-outline-variant/10 group hover:bg-surface-container-high transition-colors cursor-default">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="dynamic_feed">dynamic_feed</span>
+<div>
+<h3 class="text-xl font-bold mb-4">Scalable Operations</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Standardized frameworks that allow global expansion without the degradation of quality or performance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Founder Section -->
+<section class="bg-surface py-32 px-6 md:px-20">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-16 md:gap-32">
+<div class="md:col-span-5 aspect-[4/5] bg-surface-container overflow-hidden">
+<img alt="Alexandre Rossi portrait" class="w-full h-full object-cover grayscale" data-alt="Professional studio portrait of a middle-aged man in a dark charcoal turtleneck, monochrome photography, dramatic side lighting, focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr1wvNjzylLhVag6FUHeJbj-mvEoRdPvghVv0u5vlqp-vnjk_iNysFS2A7Xp7Vsbis21xcxSBXexQ0qqjxGcM48LkzlrSRmuK_ckcAhe6DfSTDu64siCR2uHnOAB_SHYNF1FrGaxZvYlYyXZ2EDz928tiWR0bmJ-40hwIDpBL83XBAJAI9alr98wIaVF0Jjhhq1DipOgdL-FlEJtJefh-ghV0VVi-ymnerO26AmDXVs_RANM2WoBOCYDLtcertxAvlamvRl5RHsd-3"/>
+</div>
+<div class="md:col-span-7">
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-8 block">The Founder</span>
+<blockquote class="text-3xl md:text-5xl font-black tracking-tight text-on-surface leading-[1.1] mb-10 italic">
+                        "Scale is not an accident of good luck; it is the inevitable result of precise operational architecture."
+                    </blockquote>
+<div class="flex flex-col">
+<span class="text-xl font-bold">Alexandre Rossi</span>
+<span class="text-sm text-on-surface-variant">Chief Systems Architect &amp; Founder</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quality Metrics -->
+<section class="bg-inverse-surface py-24 px-6 md:px-20">
+<div class="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8">
+<div class="flex flex-col border-l border-outline-variant/20 pl-8">
+<span class="text-3xl md:text-4xl font-black text-surface">94%</span>
+<span class="text-xs uppercase tracking-widest text-inverse-on-surface mt-2 font-medium">Waste Reduction</span>
+</div>
+<div class="flex flex-col border-l border-outline-variant/20 pl-8">
+<span class="text-3xl md:text-4xl font-black text-surface">2.4x</span>
+<span class="text-xs uppercase tracking-widest text-inverse-on-surface mt-2 font-medium">Speed of Service</span>
+</div>
+<div class="flex flex-col border-l border-outline-variant/20 pl-8">
+<span class="text-3xl md:text-4xl font-black text-surface">310+</span>
+<span class="text-xs uppercase tracking-widest text-inverse-on-surface mt-2 font-medium">Active Systems</span>
+</div>
+<div class="flex flex-col border-l border-outline-variant/20 pl-8">
+<span class="text-3xl md:text-4xl font-black text-surface">12</span>
+<span class="text-xs uppercase tracking-widest text-inverse-on-surface mt-2 font-medium">Global Offices</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-high py-32 px-6 md:px-20 text-center">
+<div class="max-w-2xl mx-auto flex flex-col items-center">
+<div class="bg-tertiary-container px-4 py-1 rounded-full mb-8">
+<span class="text-[10px] font-bold uppercase tracking-[0.15em] text-on-tertiary-fixed">Proprietary Framework</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-black text-on-surface mb-6 tracking-tight">The RASA Standard Certification</h2>
+<p class="text-on-surface-variant mb-12 leading-relaxed">
+                    Elevate your enterprise to the Architectural Standard. Our certification process validates your operational integrity and readiness for infinite scale.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+<button class="bg-on-surface text-surface px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm hover:opacity-90 transition-all">
+                        Request Audit
+                    </button>
+<button class="border border-outline-variant text-on-surface px-12 py-4 text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-surface-container-highest transition-all">
+                        View Framework
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface py-12 px-6 md:px-20 border-t border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 opacity-50">
+<div class="size-4 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-on-surface text-sm font-bold tracking-tight">RASA ENGINEERING</h2>
+</div>
+<p class="text-xs text-on-surface-variant font-medium">© 2024 RASA Systems. All Rights Reserved. Engineered Excellence.</p>
+</div>
+</footer>
+</body></html>

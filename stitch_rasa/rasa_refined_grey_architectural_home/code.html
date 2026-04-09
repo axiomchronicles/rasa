@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RASA | The Architectural Standard</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed": "#503c22",
+                      "surface-dim": "#C8CFD1",
+                      "primary-dim": "#4A4A4A",
+                      "tertiary-fixed": "#fdddb9",
+                      "surface-container-lowest": "#F2F4F5",
+                      "inverse-surface": "#0c0f0f",
+                      "secondary-fixed-dim": "#d0d5db",
+                      "inverse-on-surface": "#9c9d9d",
+                      "surface-container": "#E5E7EB",
+                      "surface-container-highest": "#D1D5DB",
+                      "primary-container": "#e5e2e1",
+                      "on-secondary-fixed-variant": "#575c61",
+                      "on-secondary-container": "#4d5257",
+                      "primary-fixed": "#e5e2e1",
+                      "surface-bright": "#F9FAFB",
+                      "on-primary": "#faf7f6",
+                      "error-container": "#fe8983",
+                      "tertiary-fixed-dim": "#eecfac",
+                      "secondary-dim": "#4f5459",
+                      "surface-variant": "#E2E8F0",
+                      "on-primary-container": "#525151",
+                      "on-secondary-fixed": "#3b4045",
+                      "primary-fixed-dim": "#d7d4d3",
+                      "secondary-container": "#dfe3e9",
+                      "surface-tint": "#5f5e5e",
+                      "secondary-fixed": "#dfe3e9",
+                      "tertiary": "#725b3f",
+                      "outline": "#757c7d",
+                      "on-primary-fixed": "#403f3f",
+                      "surface-container-high": "#DEE2E6",
+                      "tertiary-container": "#fdddb9",
+                      "error-dim": "#4e0309",
+                      "inverse-primary": "#ffffff",
+                      "error": "#9f403d",
+                      "background": "#E5E7EB",
+                      "on-surface": "#1A1C1E",
+                      "on-secondary": "#f5f9ff",
+                      "on-primary-fixed-variant": "#5c5b5b",
+                      "outline-variant": "#adb3b4",
+                      "surface": "#F1F3F5",
+                      "secondary": "#5b6065",
+                      "primary": "#374151",
+                      "on-background": "#1A1C1E",
+                      "on-surface-variant": "#475569",
+                      "surface-container-low": "#EDF0F2",
+                      "on-error": "#fff7f6",
+                      "tertiary-dim": "#654f34",
+                      "on-tertiary-fixed-variant": "#6e573b",
+                      "on-tertiary-container": "#644e33",
+                      "on-error-container": "#752121",
+                      "on-tertiary": "#fff7f3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glass {
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low text-on-surface font-body selection:bg-tertiary-container selection:text-on-tertiary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-100/90 backdrop-blur-xl border-b border-stone-200">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-stone-900">RASA</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-stone-900 border-b-2 border-stone-900 pb-1" href="#">Projects</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-stone-500 hover:text-stone-900 transition-colors duration-300" href="#">Services</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-stone-500 hover:text-stone-900 transition-colors duration-300" href="#">Standards</a>
+<a class="font-['Manrope'] font-bold tracking-tight text-sm uppercase text-stone-500 hover:text-stone-900 transition-colors duration-300" href="#">About</a>
+</div>
+<button class="bg-stone-800 text-stone-50 px-8 py-3 text-sm font-bold tracking-tight uppercase hover:bg-stone-700 transition-all duration-300 scale-95 active:scale-90">
+                Get Started
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="moody rainy cafe interior seen through a large glass window with soft amber lights reflected in puddles outside" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj2Njig1vMAkinXk0dAZQarF2A5IBOMAjn2CnFE1osfumNBk9jxWJmwu9eP-9dvbK8Kx_CMHx71V0XdVM3rj4ZH1f0aKSxWQggmw76TWqD6yYN9tPv71n5c65I_sUgmdAmdFU9yYNO4MPODxQ7ERfWBS7vk9zXa4FdyhJVc-9AJox6AiLabuKqf916g3gUMInaQNZVkokY6EmnIBonQdX_ktgyu5GSN4yTPlZoudyf0Afy2m10V9iNKqioAis5mCPTMrYcrArjWrgm"/>
+<div class="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-12 md:px-24 w-full max-w-7xl">
+<span class="label-sm uppercase tracking-[0.2em] text-tertiary-fixed mb-6 block font-medium">Established MMXXIV</span>
+<h1 class="font-headline text-5xl md:text-8xl font-extrabold tracking-tighter leading-tight text-white mb-8">
+                    Elevating Cafes &amp;<br/>Restaurants
+                </h1>
+<p class="text-stone-300 text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed">
+                    We deliver the architectural blueprint for hospitality excellence. Strategic spatial design met with uncompromising operational standards.
+                </p>
+<div class="flex flex-col md:flex-row items-start md:items-center gap-12 py-10 border-y border-white/10 max-w-3xl">
+<div class="flex flex-col">
+<span class="text-3xl font-black text-white">50+</span>
+<span class="text-xs uppercase tracking-widest text-stone-500 mt-1">Projects</span>
+</div>
+<div class="hidden md:block h-12 w-px bg-white/10"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-black text-white">25+</span>
+<span class="text-xs uppercase tracking-widest text-stone-500 mt-1">Cities</span>
+</div>
+<div class="hidden md:block h-12 w-px bg-white/10"></div>
+<div class="flex flex-col">
+<span class="text-3xl font-black text-white">100%</span>
+<span class="text-xs uppercase tracking-widest text-stone-500 mt-1">Standards</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Philosophy -->
+<section class="py-32 bg-stone-200 overflow-hidden">
+<div class="max-w-[1920px] mx-auto px-12 md:px-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+<div class="lg:col-span-5">
+<div class="mb-16">
+<span class="text-stone-600 font-bold tracking-widest text-xs uppercase mb-4 block">The Methodology</span>
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-stone-900 leading-none mb-6">
+                                Design • Build • Standardize
+                            </h2>
+<p class="text-stone-700 text-lg leading-relaxed">
+                                Beyond aesthetics, we define the rhythm of your space. Our approach integrates sensory architecture with operational flow, ensuring every corner serves a purpose and every interaction is intentional.
+                            </p>
+</div>
+<div class="space-y-12">
+<!-- Service Item -->
+<div class="flex gap-6 group">
+<div class="w-12 h-12 bg-stone-300 flex items-center justify-center rounded-none shadow-sm group-hover:bg-stone-800 transition-colors duration-300">
+<span class="material-symbols-outlined text-stone-800 group-hover:text-stone-50 transition-colors">architecture</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-stone-900 mb-2">Concept Development</h4>
+<p class="text-stone-600 text-sm leading-relaxed max-w-sm">Strategic identity creation that captures the core essence of your brand's hospitality vision.</p>
+</div>
+</div>
+<!-- Service Item -->
+<div class="flex gap-6 group">
+<div class="w-12 h-12 bg-stone-300 flex items-center justify-center rounded-none shadow-sm group-hover:bg-stone-800 transition-colors duration-300">
+<span class="material-symbols-outlined text-stone-800 group-hover:text-stone-50 transition-colors">space_dashboard</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-stone-900 mb-2">Space Design</h4>
+<p class="text-stone-600 text-sm leading-relaxed max-w-sm">Optimizing the friction between guest comfort and staff efficiency through meticulous floor planning.</p>
+</div>
+</div>
+<!-- Service Item -->
+<div class="flex gap-6 group">
+<div class="w-12 h-12 bg-stone-300 flex items-center justify-center rounded-none shadow-sm group-hover:bg-stone-800 transition-colors duration-300">
+<span class="material-symbols-outlined text-stone-800 group-hover:text-stone-50 transition-colors">verified</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-stone-900 mb-2">Operations Standards</h4>
+<p class="text-stone-600 text-sm leading-relaxed max-w-sm">The RASA Certification: A comprehensive manual for sustainable excellence and operational scale.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 relative">
+<div class="relative z-10 aspect-[4/5] md:aspect-[16/10]">
+<img alt="minimalist premium cafe counter with marble surfaces, industrial espresso machine, and soft natural lighting from high windows" class="w-full h-full object-cover shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABfVE_EEQ0xFj1pZc4SLuuOwFQc2UXVZlssuF7_MF2XyCSAzsdCDmwV67qBj7zzHyMfCJ5tB-92hK6i7KOuRj2A5QsorFi998rd8F1oHm-Fu_-tWvGp12DIjKtKeS6i_HK1WbBLdwxZjaJe2m3nAJUuJUUrC206AeqpzJgXQjoURvBuA50JGlWKKYMsZoPRDTfF3AIyL9QG22Oc5Z3HaN692oybEoNDnGNeVYXusojllYTevtnMqt5DTOwA7-XtIRdtulOisg_9eWs"/>
+</div>
+<!-- Decorative Accents -->
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-stone-400/10 -z-0"></div>
+<div class="absolute top-1/2 -right-12 w-24 h-px bg-stone-400 transform -translate-y-1/2"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Showcase -->
+<section class="py-32 bg-stone-100">
+<div class="px-12 md:px-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20">
+<div class="max-w-xl">
+<h3 class="font-headline text-3xl md:text-5xl font-bold tracking-tight mb-4 text-stone-900">Curated Standards</h3>
+<p class="text-stone-600">Selected transformations that define the modern hospitality landscape.</p>
+</div>
+<a class="group flex items-center gap-2 font-bold text-sm uppercase tracking-widest mt-6 md:mt-0 text-stone-900" href="#">
+                        View Archive
+                        <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto">
+<div class="md:col-span-8 group overflow-hidden">
+<div class="relative h-[600px] bg-stone-200 overflow-hidden">
+<img alt="modern minimalist restaurant interior with dark wood furniture and dramatic pendant lighting in a metropolitan setting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXDXErF-jXNgbvHUmNH8X6UJazlH82ZgUwO7HpK33EK6CS0XSPlfpXpTlYsaXTqsWmZ8vOXeIXJOFpI1A58VHtAgq2Iw46QMm9q6cLy0XFORQSIWKKo6Mljn6C5w8BhHqBhoK21JmGbHIyo_cJ9gfgvIETz1dQv2pzQX9l7SCgm-TCJGpXV-VxNMIo_Z33Q6meSkpoh4kRK31hTG6mEdNqhXBF28XbyltRw5rY5qDXfqTEIjYstDhe0gxrPT8ZZRwPkdhOe8anjDZM"/>
+<div class="absolute bottom-10 left-10 text-white">
+<span class="bg-stone-800 px-3 py-1 text-[10px] uppercase tracking-widest mb-3 inline-block">Copenhagen</span>
+<h4 class="text-3xl font-bold">The Nordic Roast</h4>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-8">
+<div class="group overflow-hidden flex-1 relative">
+<div class="h-full bg-stone-300 overflow-hidden">
+<img alt="luxury boutique cafe detail showing artisanal ceramic mugs on a white stone counter under soft focus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkLP3JxnIgnwkxdte7r77Sdrq_kreXnbHzpb9Ik31GlXz5QmlElUD-kV5Isu-G0mew3D2FYJdExiOqZ3bq0Pf85tz3g4RkmGb4UupPtMlZpCH1oy--dBTI3t6CPlxtEvlSiwpl4_nRqL33t77J-aZ3Xb1KwS8N0-QuCkD9y2iEbQG0XDJVl_aY1BS-UF2mhY8CRFVyiQ_TChqETGoiyMLCCDpaIvCqFkV4fIfm4fZlyd6eZzPxhtkLOCK8l375P4wl7jolbCUbzYRC"/>
+<div class="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/30 transition-all"></div>
+</div>
+</div>
+<div class="bg-stone-200 p-10 flex flex-col justify-center">
+<span class="text-stone-500 font-bold text-xs uppercase tracking-widest mb-4">New Entry</span>
+<h4 class="text-xl font-bold mb-4 text-stone-900">Metropolitan Scale</h4>
+<p class="text-stone-600 text-sm">Case study on high-volume efficiency without sacrificing the boutique experience.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 bg-stone-900 text-stone-50 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<path d="M0 0 L100 100 L100 0 Z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="px-12 md:px-24 relative z-10 text-center max-w-4xl mx-auto">
+<h2 class="font-headline text-4xl md:text-6xl font-extrabold mb-8 tracking-tighter">Ready to set the standard?</h2>
+<p class="text-stone-400 text-lg md:text-xl mb-12 font-light">
+                    Join the 100+ owners who have redefined their commercial space with RASA. Our consultants are ready to blueprint your success.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-stone-50 text-stone-950 px-10 py-4 font-bold uppercase tracking-tight text-sm hover:bg-stone-200 transition-all">
+                        Initiate Consultation
+                    </button>
+<button class="border border-stone-700 text-stone-50 px-10 py-4 font-bold uppercase tracking-tight text-sm hover:bg-stone-50/5 transition-all">
+                        Download Standards
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-950 w-full rounded-none border-t border-stone-800/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-[1920px] mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold tracking-widest text-white uppercase">RASA</div>
+<p class="font-['Inter'] text-sm leading-relaxed tracking-wide text-stone-500 max-w-xs">
+                    Architectural rigor meets hospitality soul. Defining the physical and operational landscape of modern dining.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-stone-800 flex items-center justify-center hover:bg-stone-50 hover:text-stone-950 transition-all text-stone-500" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 border border-stone-800 flex items-center justify-center hover:bg-stone-50 hover:text-stone-950 transition-all text-stone-500" href="#">
+<span class="material-symbols-outlined text-lg">camera</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-stone-50 font-bold uppercase text-xs tracking-widest">Global Offices</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-stone-500">
+<li class="hover:text-stone-200 transition-colors">Stockholm, SE</li>
+<li class="hover:text-stone-200 transition-colors">Brooklyn, NY</li>
+<li class="hover:text-stone-200 transition-colors">Tokyo, JP</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-stone-50 font-bold uppercase text-xs tracking-widest">Navigation</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-stone-500">
+<li><a class="hover:translate-x-1 inline-block transition-transform duration-200 hover:text-stone-200" href="#">Sustainability</a></li>
+<li><a class="hover:translate-x-1 inline-block transition-transform duration-200 hover:text-stone-200" href="#">Career</a></li>
+<li><a class="hover:translate-x-1 inline-block transition-transform duration-200 hover:text-stone-200" href="#">Legal</a></li>
+<li><a class="hover:translate-x-1 inline-block transition-transform duration-200 hover:text-stone-200" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h5 class="text-stone-50 font-bold uppercase text-xs tracking-widest">Insights</h5>
+<p class="font-['Inter'] text-sm text-stone-500">Subscribe to our quarterly journal on spatial psychology.</p>
+<div class="flex">
+<input class="bg-stone-900 border-none text-white text-sm px-4 py-3 focus:ring-1 focus:ring-stone-500 w-full outline-none placeholder-stone-600" placeholder="Email Address" type="email"/>
+<button class="bg-stone-800 px-4 py-3 hover:bg-stone-700 transition-colors">
+<span class="material-symbols-outlined text-white text-sm">east</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Inter'] text-xs tracking-wide text-stone-600">© 2024 RASA. The Architectural Standard.</p>
+<div class="flex gap-8">
+<a class="text-xs text-stone-600 hover:text-stone-400" href="#">Terms of Service</a>
+<a class="text-xs text-stone-600 hover:text-stone-400" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
