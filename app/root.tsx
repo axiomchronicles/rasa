@@ -6,7 +6,6 @@ import {
   ScrollRestoration,
 } from "react-router";
 
-import { FloatingWhatsApp } from "@/components/common/floating-whatsapp";
 import { RouteOrchestrator } from "@/components/common/route-orchestrator";
 import { SITE_NAME, organizationJsonLd, toJsonLd, websiteJsonLd } from "@/lib/seo";
 import type { Route } from "./+types/root";
@@ -67,7 +66,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="bg-surface text-on-surface">
         {children}
-        <FloatingWhatsApp />
         <ScrollRestoration />
         <Scripts />
       </body>

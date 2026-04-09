@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Outlet, useLocation, useNavigation } from "react-router";
 
+import { FloatingWhatsApp } from "@/components/common/floating-whatsapp";
 import { pagePresenceVariants } from "@/lib/stitch/motion";
 
 export function RouteOrchestrator() {
@@ -56,6 +57,8 @@ export function RouteOrchestrator() {
           <Outlet />
         </motion.div>
       </AnimatePresence>
+
+      <FloatingWhatsApp />
     </>
   );
 }

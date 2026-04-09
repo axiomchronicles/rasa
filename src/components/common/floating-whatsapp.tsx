@@ -9,10 +9,10 @@ export function FloatingWhatsApp() {
 
   return (
     <div
-      className="group fixed z-[200] pointer-events-auto"
+      className="group fixed bottom-5 right-5 z-[9999] pointer-events-auto"
       style={{
-        bottom: "max(1.25rem, env(safe-area-inset-bottom))",
-        right: "max(1.25rem, env(safe-area-inset-right))",
+        bottom: "max(1.25rem, env(safe-area-inset-bottom, 0px))",
+        right: "max(1.25rem, env(safe-area-inset-right, 0px))",
       }}
     >
       <span className="pointer-events-none absolute right-16 top-1/2 hidden -translate-y-1/2 translate-x-2 whitespace-nowrap rounded-sm bg-stone-900 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white opacity-0 transition-all duration-200 md:block group-hover:translate-x-0 group-hover:opacity-100">
