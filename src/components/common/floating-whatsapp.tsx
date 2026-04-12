@@ -1,4 +1,4 @@
-const WHATSAPP_URL = "https://wa.me/";
+const WHATSAPP_URL = "https://wa.me/9217143112";
 
 export function FloatingWhatsApp() {
   const openWhatsApp = () => {
