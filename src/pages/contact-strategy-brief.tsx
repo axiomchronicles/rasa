@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BadgeCheck, Building2, LoaderCircle, Mail, MessageSquare, Phone, UserRound } from "lucide-react";
+import { FaInstagram } from "react-icons/fa6";
 
 import { SectionWave } from "@/components/stitch/section-wave";
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,8 @@ type ContactStrategyBriefPageProps = {
 };
 
 export function ContactStrategyBriefPage({ contactEmail }: ContactStrategyBriefPageProps) {
+  const instagramHandle = "@_rasaone";
+  const instagramHref = "https://www.instagram.com/_rasaone?igsh=OGQ5ZDc2ODk2ZA==";
   const {
     register,
     onSubmit,
@@ -183,6 +186,31 @@ export function ContactStrategyBriefPage({ contactEmail }: ContactStrategyBriefP
                         </div>
                       </div>
 
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 md:gap-10">
+                        <div className="space-y-2">
+                          <label className={fieldLabelClassName}>
+                            Instagram Handle
+                          </label>
+                          <div className="relative">
+                            <Input
+                              autoComplete="off"
+                              placeholder="@yourbrand"
+                              className={cn(
+                                fieldInputClassName,
+                                errors.instagramHandle ? fieldErrorClassName : null
+                              )}
+                              {...register("instagramHandle")}
+                            />
+                            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold tracking-wide text-outline/75">
+                              IG
+                            </span>
+                          </div>
+                          {errors.instagramHandle ? (
+                            <p className="text-xs font-medium tracking-[0.04em] text-error">{errors.instagramHandle.message}</p>
+                          ) : null}
+                        </div>
+                      </div>
+
                       <div className="space-y-2">
                         <label className={fieldLabelClassName}>
                           Inquiry Details
@@ -292,6 +320,26 @@ export function ContactStrategyBriefPage({ contactEmail }: ContactStrategyBriefP
                       </div>
                       <p className="text-on-surface-variant text-sm mt-1">
                         For formal RFP and partnership inquiries.
+                      </p>
+                    </div>
+
+                    <div className="group border-l border-outline-variant/30 pl-4 sm:pl-6 md:pl-8 py-2 min-w-0">
+                      <span className="font-label text-[10px] uppercase tracking-widest text-tertiary font-bold mb-1 block">
+                        Instagram
+                      </span>
+                      <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                        <FaInstagram className="h-5 w-5 text-primary" />
+                        <a
+                          className="font-headline font-bold text-base sm:text-lg md:text-2xl break-words leading-snug text-on-surface group-hover:text-tertiary transition-colors"
+                          href={instagramHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {instagramHandle}
+                        </a>
+                      </div>
+                      <p className="text-on-surface-variant text-sm mt-1">
+                        Follow our projects and latest hospitality transformations.
                       </p>
                     </div>
                   </div>

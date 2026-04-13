@@ -140,6 +140,9 @@ function withLineBreaks(value: string): string {
 }
 
 function buildContactBriefHtml(payload: ContactBriefMailPayload): string {
+  const normalizedInstagramHandle = payload.instagramHandle.trim();
+  const instagramCell = normalizedInstagramHandle ? escapeHtml(normalizedInstagramHandle) : "N/A";
+
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -181,6 +184,10 @@ function buildContactBriefHtml(payload: ContactBriefMailPayload): string {
                   <tr>
                     <td style="width:210px;padding:12px 14px;background:#f1ece3;border-bottom:1px solid #ddd8cc;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:#665f52;">Phone Number</td>
                     <td style="padding:12px 14px;border-bottom:1px solid #ddd8cc;font-size:14px;color:#2f2d28;">${escapeHtml(payload.phoneNumber)}</td>
+                  </tr>
+                  <tr>
+                    <td style="width:210px;padding:12px 14px;background:#f1ece3;border-bottom:1px solid #ddd8cc;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:#665f52;">Instagram Handle</td>
+                    <td style="padding:12px 14px;border-bottom:1px solid #ddd8cc;font-size:14px;color:#2f2d28;">${instagramCell}</td>
                   </tr>
                   <tr>
                     <td style="width:210px;padding:12px 14px;background:#f1ece3;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;color:#665f52;vertical-align:top;">Inquiry Details</td>
@@ -226,6 +233,8 @@ function buildContactBriefHtml(payload: ContactBriefMailPayload): string {
 }
 
 function buildContactBriefText(payload: ContactBriefMailPayload): string {
+  const normalizedInstagramHandle = payload.instagramHandle.trim();
+
   return [
     "RASA Strategic Inquiry - New Contact Brief",
     "",
@@ -233,6 +242,7 @@ function buildContactBriefText(payload: ContactBriefMailPayload): string {
     `Business Name: ${payload.businessName}`,
     `Corporate Email: ${payload.corporateEmail}`,
     `Phone Number: ${payload.phoneNumber}`,
+    `Instagram Handle: ${normalizedInstagramHandle || "N/A"}`,
     "",
     "Inquiry Details:",
     payload.inquiryDetails,

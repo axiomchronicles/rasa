@@ -33,6 +33,7 @@ export function useContactBriefForm() {
     formData.set("businessName", values.businessName);
     formData.set("corporateEmail", values.corporateEmail);
     formData.set("phoneNumber", values.phoneNumber);
+    formData.set("instagramHandle", values.instagramHandle);
     formData.set("inquiryDetails", values.inquiryDetails);
     formData.set("website", "");
 

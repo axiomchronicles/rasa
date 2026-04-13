@@ -5,6 +5,7 @@ export const contactBriefFieldNames = [
   "businessName",
   "corporateEmail",
   "phoneNumber",
+  "instagramHandle",
   "inquiryDetails",
 ] as const;
 
@@ -27,6 +28,10 @@ export const contactBriefSchema = z.object({
     .trim()
     .min(7, "Phone number is required")
     .max(32, "Phone number is too long"),
+  instagramHandle: z
+    .string()
+    .trim()
+    .max(64, "Instagram handle is too long"),
   inquiryDetails: z
     .string()
     .trim()
@@ -41,6 +46,7 @@ export const defaultContactBriefValues: ContactBriefValues = {
   businessName: "",
   corporateEmail: "",
   phoneNumber: "",
+  instagramHandle: "",
   inquiryDetails: "",
 };
 

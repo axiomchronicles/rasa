@@ -1,4 +1,5 @@
 import { ArrowRight, Camera, Globe, Mail, Share2 } from "lucide-react";
+import { FaInstagram } from "react-icons/fa6";
 import { Link } from "react-router";
 
 import { RasaMark } from "@/components/common/rasa-mark";
@@ -8,6 +9,8 @@ import { stitchContracts, type StitchSignature } from "@/lib/stitch/contracts";
 type StitchFooterProps = {
   signature: StitchSignature;
 };
+
+const INSTAGRAM_URL = "https://www.instagram.com/_rasaone?igsh=OGQ5ZDc2ODk2ZA==";
 
 function DarkGridFooter({ signature }: StitchFooterProps) {
   const contract = stitchContracts[signature];
@@ -26,6 +29,15 @@ function DarkGridFooter({ signature }: StitchFooterProps) {
             </a>
             <a className={skin.iconBox} href="#" aria-label="Gallery">
               <Camera className="h-4 w-4" />
+            </a>
+            <a
+              className={skin.iconBox}
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="h-4 w-4" />
             </a>
           </div>
         </div>
@@ -125,7 +137,15 @@ function LightGridFooter({ signature }: StitchFooterProps) {
         <div className="flex items-center gap-5 text-stone-500">
           <Globe className="h-4 w-4" />
           <Mail className="h-4 w-4" />
-          <Share2 className="h-4 w-4" />
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-stone-700"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="h-4 w-4" />
+          </a>
         </div>
         <p className={skin.copy}>{contract.footer.copy}</p>
       </div>

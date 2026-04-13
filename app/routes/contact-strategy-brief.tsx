@@ -73,6 +73,7 @@ export async function action({ request }: Route.ActionArgs) {
     businessName: readFormInput(formData, "businessName"),
     corporateEmail: readFormInput(formData, "corporateEmail"),
     phoneNumber: readFormInput(formData, "phoneNumber"),
+    instagramHandle: readFormInput(formData, "instagramHandle"),
     inquiryDetails: readFormInput(formData, "inquiryDetails"),
   };
 
