@@ -264,7 +264,7 @@ export function ArchitecturalHomePage() {
                   
                 </motion.span>
                 <h1
-                  className="font-copper-black hero-title-elegant text-4xl sm:text-5xl md:text-8xl leading-tight text-white mb-8"
+                  className="font-copper-black hero-title-elegant text-3xl sm:text-4xl md:text-7xl leading-tight text-white mb-8"
                 >
                   Elevating Cafes &amp;
                   <br />
@@ -272,7 +272,7 @@ export function ArchitecturalHomePage() {
                 </h1>
                 <motion.p
                   variants={itemVariants}
-                  className="font-cavolini text-stone-300 text-lg sm:text-xl md:text-2xl max-w-xl mb-10 md:mb-12 leading-relaxed tracking-[0.01em]"
+                  className="font-cavolini text-stone-300 text-sm sm:text-base md:text-lg max-w-xl mb-10 md:mb-12 leading-relaxed tracking-[0.01em]"
                 >
                  We transform ambitious cafes and restaurants from owner-dependent shops into system-driven, scalable brands through uncompromising operational standards.
                 </motion.p>
