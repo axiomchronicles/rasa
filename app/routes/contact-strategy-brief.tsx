@@ -1,4 +1,5 @@
 import { Suspense, lazy } from "react";
+import { useLoaderData } from "react-router";
 import type { Route } from "./+types/contact-strategy-brief";
 
 import { RoutePageLoader } from "@/components/common/route-page-loader";
@@ -15,7 +16,32 @@ const ContactStrategyBriefPage = lazy(() =>
   }))
 );
 
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const successMessage = "Inquiry received. A consultant will respond within one business day.";
+
+function resolvePublicContactEmail() {
+  const candidates = [
+    process.env.CONTACT_PUBLIC_EMAIL,
+    process.env.CONTACT_BRIEF_TO,
+    process.env.SMTP_USER,
+  ];
+
+  for (const candidate of candidates) {
+    const normalized = candidate?.trim();
+    if (normalized && emailPattern.test(normalized)) {
+      return normalized;
+    }
+  }
+
+  return "";
+}
+
+export async function loader() {
+  return {
+    contactEmail: resolvePublicContactEmail(),
+  };
+}
 
 function readFormInput(formData: FormData, field: string) {
   const value = formData.get(field);
@@ -112,9 +138,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function ContactStrategyBriefRoute() {
+  const { contactEmail } = useLoaderData<typeof loader>();
+
   return (
     <Suspense fallback={<RoutePageLoader label="Loading contact" />}>
-      <ContactStrategyBriefPage />
+      <ContactStrategyBriefPage contactEmail={contactEmail} />
     </Suspense>
   );
 }

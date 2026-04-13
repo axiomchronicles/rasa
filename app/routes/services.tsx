@@ -1,4 +1,5 @@
 import { Suspense, lazy } from "react";
+import { useLoaderData } from "react-router";
 import type { Route } from "./+types/services";
 
 import { RoutePageLoader } from "@/components/common/route-page-loader";
@@ -9,6 +10,31 @@ const ContactStrategyBriefPage = lazy(() =>
     default: module.ContactStrategyBriefPage,
   }))
 );
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function resolvePublicContactEmail() {
+  const candidates = [
+    process.env.CONTACT_PUBLIC_EMAIL,
+    process.env.CONTACT_BRIEF_TO,
+    process.env.SMTP_USER,
+  ];
+
+  for (const candidate of candidates) {
+    const normalized = candidate?.trim();
+    if (normalized && emailPattern.test(normalized)) {
+      return normalized;
+    }
+  }
+
+  return "";
+}
+
+export async function loader() {
+  return {
+    contactEmail: resolvePublicContactEmail(),
+  };
+}
 
 export function meta({}: Route.MetaArgs) {
   return buildSeoMeta({
@@ -21,9 +47,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function ServicesRoute() {
+  const { contactEmail } = useLoaderData<typeof loader>();
+
   return (
     <Suspense fallback={<RoutePageLoader label="Loading services" />}>
-      <ContactStrategyBriefPage />
+      <ContactStrategyBriefPage contactEmail={contactEmail} />
     </Suspense>
   );
 }

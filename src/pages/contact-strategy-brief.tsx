@@ -21,7 +21,11 @@ const fieldTextareaClassName =
 const fieldErrorClassName =
   "border-error/70 focus:border-error focus:shadow-[0_0_0_4px_rgba(159,64,61,0.16)]";
 
-export function ContactStrategyBriefPage() {
+type ContactStrategyBriefPageProps = {
+  contactEmail?: string;
+};
+
+export function ContactStrategyBriefPage({ contactEmail }: ContactStrategyBriefPageProps) {
   const {
     register,
     onSubmit,
@@ -29,6 +33,8 @@ export function ContactStrategyBriefPage() {
     isPending,
     submissionState,
   } = useContactBriefForm();
+  const normalizedContactEmail = contactEmail?.trim() ?? "";
+  const contactHref = normalizedContactEmail ? `mailto:${normalizedContactEmail}` : undefined;
 
   return (
     <StitchPageFrame signature="contact-strategy-brief" className="bg-surface text-on-surface font-body antialiased">
@@ -271,12 +277,18 @@ export function ContactStrategyBriefPage() {
                       </span>
                       <div className="flex items-center gap-4">
                         <Mail className="h-5 w-5 text-primary" />
-                        <a
-                          className="font-headline font-bold text-2xl text-on-surface group-hover:text-tertiary transition-colors"
-                          href="mailto:rasa.helpcare@gmail.com"
-                        >
-                          rasa.helpcare@gmail.com
-                        </a>
+                        {contactHref ? (
+                          <a
+                            className="font-headline font-bold text-2xl text-on-surface group-hover:text-tertiary transition-colors"
+                            href={contactHref}
+                          >
+                            {normalizedContactEmail}
+                          </a>
+                        ) : (
+                          <span className="font-headline font-bold text-2xl text-on-surface">
+                            Contact Desk
+                          </span>
+                        )}
                       </div>
                       <p className="text-on-surface-variant text-sm mt-1">
                         For formal RFP and partnership inquiries.

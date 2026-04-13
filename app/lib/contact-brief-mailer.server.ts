@@ -74,13 +74,13 @@ function normalizeFromAddress(fromRaw: string | undefined, smtpUser: string): st
 }
 
 function readSettings(): ContactBriefMailSettings {
-  const host = process.env.SMTP_HOST?.trim() || "smtp.gmail.com";
+  const host = requireEnv("SMTP_HOST");
   const port = parsePort(process.env.SMTP_PORT?.trim() || "465");
   const secure = (process.env.SMTP_SECURE?.trim() || "true").toLowerCase() !== "false";
   const user = requireEnv("SMTP_USER");
   const pass = requireEnv("SMTP_PASS");
   const from = normalizeFromAddress(process.env.SMTP_FROM, user);
-  const to = process.env.CONTACT_BRIEF_TO?.trim() || "rasa.helpcare@gmail.com";
+  const to = requireEnv("CONTACT_BRIEF_TO");
 
   return {
     host,
