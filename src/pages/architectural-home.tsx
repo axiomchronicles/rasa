@@ -9,7 +9,7 @@ const services = [
   {
     title: "Concept Development",
     detail:
-      "Strategic identity creation that captures the core essence of your brand's hospitality vision.",
+      "Strategic identity creation that captures the core essence of your brand's hospitality vision where we create a strategic brand presence that resonates with your market and sets the stage for a premium hospitality experience..",
     Icon: Building2,
   },
   {
@@ -21,7 +21,7 @@ const services = [
   {
     title: "Operations Standards",
     detail:
-      "The RASA Certification: A comprehensive manual for sustainable excellence and operational scale.",
+      "The RASA Certification: The RASA Certification provides the systems and consistency needed to replicate your success across 10, 50, or 100 locations with zero compromise on quality.",
     Icon: ShieldCheck,
   },
 ];
@@ -56,7 +56,7 @@ export function ArchitecturalHomePage() {
                   variants={itemVariants}
                   className="label-sm uppercase tracking-[0.2em] text-tertiary-fixed mb-6 block font-medium"
                 >
-                  Established MMXXIV
+                  
                 </motion.span>
                 <motion.h1
                   variants={itemVariants}
@@ -70,8 +70,7 @@ export function ArchitecturalHomePage() {
                   variants={itemVariants}
                   className="text-stone-300 text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed"
                 >
-                  We deliver the architectural blueprint for hospitality excellence. Strategic
-                  spatial design met with uncompromising operational standards.
+                 We transform ambitious cafes and restaurants from owner-dependent shops into system-driven, scalable brands through uncompromising operational standards.
                 </motion.p>
 
                 <motion.div
@@ -109,16 +108,17 @@ export function ArchitecturalHomePage() {
                 <div className="lg:col-span-5">
                   <motion.div variants={itemVariants} className="mb-16">
                     <span className="text-stone-600 font-bold tracking-widest text-xs uppercase mb-4 block">
-                      The Methodology
+                      
                     </span>
                     <h2 className="font-headline text-4xl md:text-5xl font-extrabold text-stone-900 leading-none mb-6">
-                      Design • Build • Standardize
+                      Vision • Build • Standardize
                     </h2>
-                    <p className="text-stone-700 text-lg leading-relaxed">
-                      Beyond aesthetics, we define the rhythm of your space. Our approach
-                      integrates sensory architecture with operational flow, ensuring every corner
-                      serves a purpose and every interaction is intentional.
-                    </p>
+                    <b> RASA VISION </b>
+                    
+                   <p className="text-stone-700 text-lg leading-relaxed">
+                    To become India's most trusted standardisation and growth partner for cafes and restaurants.Standardise as many cafes as possible across India
+Build India's largest restaurant operations intelligence network
+              </p>
                   </motion.div>
 
                   <div className="space-y-12">
@@ -199,9 +199,9 @@ export function ArchitecturalHomePage() {
                     />
                     <div className="absolute bottom-10 left-10 text-white">
                       <span className="bg-stone-800 px-3 py-1 text-[10px] uppercase tracking-widest mb-3 inline-block">
-                        Copenhagen
+                        THE FUTURE
                       </span>
-                      <h4 className="text-3xl font-bold">The Nordic Roast</h4>
+                      <h4 className="text-3xl font-bold"><b>RASA</b></h4>
                     </div>
                   </div>
                 </motion.div>
@@ -223,12 +223,11 @@ export function ArchitecturalHomePage() {
                   </div>
                   <div className="bg-stone-200 p-10 flex flex-col justify-center">
                     <span className="text-stone-500 font-bold text-xs uppercase tracking-widest mb-4">
-                      New Entry
+                      
                     </span>
-                    <h4 className="text-xl font-bold mb-4 text-stone-900">Metropolitan Scale</h4>
+                    <h4 className="text-xl font-bold mb-4 text-stone-900"> </h4>
                     <p className="text-stone-600 text-sm">
-                      Case study on high-volume efficiency without sacrificing the boutique
-                      experience.
+                      RASA's latest standard for large-scale urban cafes, blending metropolitan
                     </p>
                   </div>
                 </motion.div>
@@ -257,20 +256,13 @@ export function ArchitecturalHomePage() {
                   variants={itemVariants}
                   className="text-stone-400 text-lg md:text-xl mb-12 font-light"
                 >
-                  Join the 100+ owners who have redefined their commercial space with RASA. Our
-                  consultants are ready to blueprint your success.
+                  We’ve helped over 100 founders reclaim their time by building cafes that run themselves with RASA. Let’s sit down and blueprint a system that works as hard as you do.
                 </motion.p>
                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Button variant="subtle" size="lg" className="bg-stone-50 text-stone-950 hover:bg-stone-200">
                     Initiate Consultation
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-stone-700 text-stone-50 hover:bg-stone-50/5"
-                  >
-                    Download Standards
-                  </Button>
+                  
                 </motion.div>
               </div>
             </>

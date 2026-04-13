@@ -144,7 +144,7 @@ export function ContactStrategyBriefPage() {
                               type="tel"
                               autoComplete="tel"
                               inputMode="tel"
-                              placeholder="+1 (000) 000-0000"
+                              placeholder="+91 (000) 000-0000"
                               className={cn(
                                 fieldInputClassName,
                                 errors.phoneNumber ? fieldErrorClassName : null
@@ -221,7 +221,8 @@ export function ContactStrategyBriefPage() {
                       <div className="flex items-center gap-4">
                         <MessageSquare className="h-5 w-5 text-primary" />
                         <a className="font-headline font-bold text-2xl text-on-surface group-hover:text-tertiary transition-colors" href="#">
-                          WhatsApp Business
+                          WhatsApp Business<br></br>
+                          9217143112
                         </a>
                       </div>
                       <p className="text-on-surface-variant text-sm mt-1">
@@ -237,9 +238,9 @@ export function ContactStrategyBriefPage() {
                         <Mail className="h-5 w-5 text-primary" />
                         <a
                           className="font-headline font-bold text-2xl text-on-surface group-hover:text-tertiary transition-colors"
-                          href="mailto:consult@rasa.com"
+                          href="mailto:rasa.helpcare@gmail.com"
                         >
-                          consult@rasa.com
+                          rasa.helpcare@gmail.com
                         </a>
                       </div>
                       <p className="text-on-surface-variant text-sm mt-1">
@@ -277,20 +278,18 @@ export function ContactStrategyBriefPage() {
               <img
                 className="w-full h-full object-cover"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Y2IXEzZXLTPjgH-nsM7eEalS4djdMrFxuUJoCUIXPIsl_qc7SZTHnlLTXzcHkbVU6TtJA2S98hGh3THWM6pGIM1tjY70pM59oWvEXm0A5DgI-VuszTuRQuNGqBF60R8RzmH9lsgOrkAlz_Z9ulp_k8Y2fuvgMQWUampnj77LG8rkY6epVxhPJP0VuSgj4oxJNRH9VQbAn4wZ7UTV-oAKNYyb6Tj3wyOuv4EzWP5M8tCUrNmcr9hQKKYD4AwkxoiTfgdLJ0Wqbx8c"
-                alt="London HQ map"
+                alt=""
                 loading="lazy"
                 decoding="async"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
             <div className="absolute bottom-12 left-12 bg-surface-container-lowest p-8 max-w-xs shadow-xl">
-              <h4 className="font-headline font-bold text-lg mb-2">London HQ</h4>
+              <h4 className="font-headline font-bold text-lg mb-2"><b>JOIN TODAY</b></h4>
               <p className="text-on-surface-variant text-sm leading-relaxed font-body">
-                The Shard, Level 24
-                <br />
-                32 London Bridge St
-                <br />
-                London SE1 9SG
+                
+                
+                MAPPING YOUR WAY ALONG <b>RASA</b>
               </p>
             </div>
           </motion.div>
