@@ -62,11 +62,11 @@ const darkGridFooter: FooterContract = {
     "Architectural rigor meets hospitality soul. Defining the physical and operational landscape of modern dining.",
   groups: [
     {
-      heading: "Global Offices",
+      heading: "Office",
       links: [
-        { label: "Stockholm, SE", to: "#" },
-        { label: "Brooklyn, NY", to: "#" },
-        { label: "Tokyo, JP", to: "#" },
+        { label: "plot no. 707, sec 68, imt faridabad, 121004", to: "#" },
+        { label: "", to: "#" },
+        { label: "", to: "#" },
       ],
     },
     {
@@ -140,7 +140,7 @@ export const stitchContracts: Record<StitchSignature, StitchContract> = {
     nav: {
       identity: "architectural",
       active: "services",
-      ctaLabel: "Get Started",
+      ctaLabel: "Join Us",
       ctaTo: "/contact/strategy-brief",
     },
     footer: darkGridFooter,
@@ -151,7 +151,7 @@ export const stitchContracts: Record<StitchSignature, StitchContract> = {
     nav: {
       identity: "architectural",
       active: "about",
-      ctaLabel: "Get Started",
+      ctaLabel: "Join Us",
       ctaTo: "/contact/strategy-brief",
     },
     footer: minimalBarFooter,
@@ -162,7 +162,7 @@ export const stitchContracts: Record<StitchSignature, StitchContract> = {
     nav: {
       identity: "architectural",
       active: "about",
-      ctaLabel: "Get Started",
+      ctaLabel: "Join Us",
       ctaTo: "/contact/strategy-brief",
     },
     footer: lightGridFooter,
@@ -173,7 +173,7 @@ export const stitchContracts: Record<StitchSignature, StitchContract> = {
     nav: {
       identity: "architectural",
       active: "services",
-      ctaLabel: "Get Started",
+      ctaLabel: "Join Us",
       ctaTo: "/contact/strategy-brief",
     },
     footer: lightGridFooter,
@@ -184,7 +184,7 @@ export const stitchContracts: Record<StitchSignature, StitchContract> = {
     nav: {
       identity: "architectural",
       active: "services",
-      ctaLabel: "Get Started",
+      ctaLabel: "Join Us",
       ctaTo: "/contact/strategy-brief",
     },
     footer: lightGridFooter,

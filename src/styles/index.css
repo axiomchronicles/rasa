@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;600;700&display=swap");
 @import "tailwindcss";
 
 @font-face {
@@ -9,9 +10,9 @@
 }
 
 @theme {
-  --font-headline: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-label: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Cormorant Garamond", "Playfair Display", "Georgia", serif;
+  --font-body: "Inter", "Helvetica Neue", system-ui, sans-serif;
+  --font-label: "Inter", "Helvetica Neue", system-ui, sans-serif;
   --font-sans: var(--font-body);
 
   --color-on-surface: #2d3435;
@@ -96,12 +97,12 @@
 
 @layer utilities {
   .font-copper-black {
-    font-family: "Cooper Black", "CooperBlackStd", "Bookman Old Style", "Georgia", serif;
-    font-weight: 900;
+    font-family: var(--font-headline);
+    font-weight: 700;
   }
 
   .font-cavolini {
-    font-family: "Cavolini", "Cavolini", "Brush Script MT", "Snell Roundhand", "Segoe Script", cursive;
+    font-family: var(--font-body);
     font-weight: 400;
   }
 
